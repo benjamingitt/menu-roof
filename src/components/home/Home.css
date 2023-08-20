@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   margin-bottom: 70px;
-  background-image: url("../../assets/images/mainPicture.jpg");
+  background-image: url('../../assets/images/mainPicture.jpg');
   background-size: 160%;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -20,27 +20,27 @@
   color: black;
   text-align: left;
   margin-bottom: 1rem;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 2rem;
   font-weight: 400;
 }
 
 .home-page .developer-information .location {
   font-size: 18px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .home-page .developer-information .location::before {
-  content: url("../../assets/images/geo-alt.svg");
+  content: url('../../assets/images/geo-alt.svg');
 }
 
 .home-page .developer-information .phone-number {
   font-size: 18px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .home-page .developer-information .phone-number::before {
-  content: url("../../assets/images/telephone.svg");
+  content: url('../../assets/images/telephone.svg');
 }
 
 .home-page .goBack-wrapper {

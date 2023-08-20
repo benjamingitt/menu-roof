@@ -112,7 +112,6 @@ const ar2 = [
     price: 3.9,
     order: 0,
   },
-
 ];
 const ar3 = [
   {
@@ -155,7 +154,6 @@ const ar3 = [
     price: 2.25,
     order: 0,
   },
-
 ];
 const ar4 = [
   {
@@ -198,34 +196,32 @@ const ar4 = [
     price: 6.5,
     order: 0,
   },
-
 ];
 
 const catagories = [
   {
     id: 0,
-    name: 'HOT MEALS',
+    name: 'Горячее',
     src: c0,
     list: ar1,
   },
   {
     id: 1,
-    name: 'SALADS',
+    name: 'Салаты',
     src: c1,
     list: ar2,
   },
   {
     id: 2,
-    name: 'DESSERTS',
+    name: 'Десерты',
     src: c2,
     list: ar3,
   },
   {
     id: 3,
-    name: 'BEAKFASTS',
+    name: 'Завтраки',
     src: c3,
     list: ar4,
   },
-
 ];
 export default catagories;
