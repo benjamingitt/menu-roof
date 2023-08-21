@@ -27,7 +27,7 @@
 }
 
 .meal-container .name-container span {
-  color: black;
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -69,7 +69,7 @@
 }
 
 .meal-container .price-and-order-container .span1::after {
-  content: "$";
+  content: '$';
 }
 
 .meal-container .price-and-order-container img {

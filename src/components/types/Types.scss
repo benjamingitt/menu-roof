@@ -7,11 +7,49 @@
   padding: 1rem;
 
   h1 {
-    color: black;
+    color: white;
     text-align: left;
     margin-bottom: 1rem;
     font-family: 'Rubik', sans-serif;
     font-size: 2rem;
     font-weight: 400;
+  }
+}
+.base-scrollbar {
+  height: 100%;
+  scrollbar-color: #bababa #fafafa;
+  scrollbar-color: #283107 #fafafa;
+
+  .tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding: 4px 20px 6px 0;
+    grid-gap: 0 8p;
+  }
+  .tablinks {
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    background: black;
+    border: 3px solid navajowhite;
+    border-radius: 32px;
+    padding: 5px 15px 4px;
+    margin: 0px 19px 0px 0px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background 0.25s,
+      color 0.25s;
+    display: flex;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    align-items: center;
+  }
+  .tablinks.active {
+    background: white;
+    color: black;
   }
 }

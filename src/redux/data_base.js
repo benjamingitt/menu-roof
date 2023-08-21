@@ -1,32 +1,32 @@
 // import main catagories image
-import c0 from '../assets/images/hotMeals.jpg';
-import c1 from '../assets/images/saladjpg.jpg';
-import c2 from '../assets/images/desserts.jpg';
-import c3 from '../assets/images/breackfasts.jpg';
+import c0 from '../assets/images/hotMeals.jpg'
+import c1 from '../assets/images/saladjpg.jpg'
+import c2 from '../assets/images/desserts.jpg'
+import c3 from '../assets/images/breackfasts.jpg'
 // import meals from first catagory
-import c1t1 from '../assets/images/dumplings.jpg';
-import c1t2 from '../assets/images/soup.jpg';
-import c1t3 from '../assets/images/burger.jpg';
-import c1t4 from '../assets/images/borscht.jpg';
-import c1t5 from '../assets/images/fishPancake.jpg';
-import c1t6 from '../assets/images/hotRolls.jpg';
+import c1t1 from '../assets/images/dumplings.jpg'
+import c1t2 from '../assets/images/soup.jpg'
+import c1t3 from '../assets/images/burger.jpg'
+import c1t4 from '../assets/images/borscht.jpg'
+import c1t5 from '../assets/images/fishPancake.jpg'
+import c1t6 from '../assets/images/hotRolls.jpg'
 // import meals from second catagory
-import c2t1 from '../assets/images/avogado.jpg';
-import c2t2 from '../assets/images/camembert.jpg';
-import c2t3 from '../assets/images/greekSalad.jpg';
-import c2t4 from '../assets/images/Guacamole.jpg';
+import c2t1 from '../assets/images/avogado.jpg'
+import c2t2 from '../assets/images/camembert.jpg'
+import c2t3 from '../assets/images/greekSalad.jpg'
+import c2t4 from '../assets/images/Guacamole.jpg'
 // import meals from third catagory
-import c3t1 from '../assets/images/RaspberryMousse.jpg';
-import c3t2 from '../assets/images/VanillaIceCream.jpg';
-import c3t3 from '../assets/images/BrownieWithRaspberries.jpg';
-import c3t4 from '../assets/images/Cheesecake.jpg';
-import c3t5 from '../assets/images/BerryIceCream.jpg';
+import c3t1 from '../assets/images/RaspberryMousse.jpg'
+import c3t2 from '../assets/images/VanillaIceCream.jpg'
+import c3t3 from '../assets/images/BrownieWithRaspberries.jpg'
+import c3t4 from '../assets/images/Cheesecake.jpg'
+import c3t5 from '../assets/images/BerryIceCream.jpg'
 // import meals from fourth catagory
-import c4t1 from '../assets/images/FullEnglishBreakfast.jpg';
-import c4t2 from '../assets/images/Oatmeal.jpg';
-import c4t3 from '../assets/images/Cheesepancakeswithstrawberryjam.jpg';
-import c4t4 from '../assets/images/AvocadoToast.jpg';
-import c4t5 from '../assets/images/Catfishonpumpkinpuree.jpg';
+import c4t1 from '../assets/images/FullEnglishBreakfast.jpg'
+import c4t2 from '../assets/images/Oatmeal.jpg'
+import c4t3 from '../assets/images/Cheesepancakeswithstrawberryjam.jpg'
+import c4t4 from '../assets/images/AvocadoToast.jpg'
+import c4t5 from '../assets/images/Catfishonpumpkinpuree.jpg'
 
 const ar1 = [
   {
@@ -77,7 +77,7 @@ const ar1 = [
     price: 4.9,
     order: 0,
   },
-];
+]
 
 const ar2 = [
   {
@@ -112,7 +112,7 @@ const ar2 = [
     price: 3.9,
     order: 0,
   },
-];
+]
 const ar3 = [
   {
     id: 0,
@@ -154,7 +154,7 @@ const ar3 = [
     price: 2.25,
     order: 0,
   },
-];
+]
 const ar4 = [
   {
     id: 0,
@@ -176,7 +176,8 @@ const ar4 = [
     id: 2,
     src: c4t3,
     name: 'Cheese pancakes with strawberry jam',
-    discription: 'Fresh cottage cheese pancakes with strawberry jam and sour cream',
+    discription:
+      'Fresh cottage cheese pancakes with strawberry jam and sour cream',
     price: 4.6,
     order: 0,
   },
@@ -192,11 +193,22 @@ const ar4 = [
     id: 4,
     src: c4t5,
     name: 'Catfish on pumpkin puree',
-    discription: 'Catfish fillet baked with young potatoes. Served with salad and pumpkin puree',
+    discription:
+      'Catfish fillet baked with young potatoes. Served with salad and pumpkin puree',
     price: 6.5,
     order: 0,
   },
-];
+]
+const ar5 = [
+  {
+    id: 0,
+    src: c4t1,
+    name: 'Full English breakfast',
+    discription: 'Fried eggs, bacon, toast, cherry tomatoes',
+    price: 6.99,
+    order: 0,
+  },
+]
 
 const catagories = [
   {
@@ -204,24 +216,35 @@ const catagories = [
     name: 'Горячее',
     src: c0,
     list: ar1,
+    index: 0,
   },
   {
     id: 1,
     name: 'Салаты',
     src: c1,
     list: ar2,
+    index: 0,
   },
   {
     id: 2,
     name: 'Десерты',
     src: c2,
     list: ar3,
+    index: 0,
   },
   {
     id: 3,
     name: 'Завтраки',
     src: c3,
     list: ar4,
+    index: 0,
   },
-];
-export default catagories;
+  {
+    id: 4,
+    name: 'Вино',
+    src: c3,
+    list: ar5,
+    index: 1,
+  },
+]
+export default catagories
