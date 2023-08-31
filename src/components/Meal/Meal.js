@@ -1,40 +1,46 @@
 /* eslint-disable */
-import './Meal.scss';
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import plus from '../../assets/images/plus.svg';
-import plus2 from '../../assets/images/plus2.svg';
-import minus from '../../assets/images/dash.svg';
-import { increament, decreament } from '../../redux/dataReduser';
+import './Meal.scss'
+import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
+import { useDispatch, useSelector } from 'react-redux'
+import plus from '../../assets/images/plus.svg'
+import plus2 from '../../assets/images/plus2.svg'
+import minus from '../../assets/images/dash.svg'
+import { increament, decreament, getProduct } from '../../redux/dataReduser'
+import { API_URL } from 'constants/constants'
 
 function Meal(props) {
-  const { CatagoryId, meal } = props;
-  const {
-    id, src, name, discription, price, order,
-  } = meal;
-  const dispatch = useDispatch();
+  const { CatagoryId, meal } = props
+  const { id, src, name, description, price, order } = meal
+  const meals = useSelector((state) => state.meals)
+  const orderFind = meals.filter((prod) => prod.id === id)
+
+  const orderVal = orderFind.length !== 0 ? orderFind[0].order : 0
+  const dispatch = useDispatch()
   const payload = {
     CatagoryId,
     typeId: id,
-  };
-  const decrease = () => { dispatch(decreament(payload)); };
+    meal,
+  }
+
+  const decrease = () => {
+    dispatch(decreament(payload))
+  }
 
   return (
     <div className="meal-container">
       <div className="image-container">
-        <img src={src} alt={name} />
+        {src ? <img src={API_URL + src} alt={name} /> : null}
       </div>
       <div className="name-container">
         <span>{name}</span>
       </div>
       <div className="discription-container">
-        <p>{discription}</p>
+        <p>{description}</p>
       </div>
       <div className="price-and-order-container">
         <span className="span1">{price}</span>
-        <div className={order > 0 ? 'counter' : 'hide'}>
-
+        <div className={orderVal > 0 ? 'counter' : 'hide'}>
           <img
             src={minus}
             alt="minus"
@@ -44,7 +50,7 @@ function Meal(props) {
             role="button"
             tabIndex={0}
           />
-          <span>{order}</span>
+          <span>{orderVal}</span>
           <img
             className="plus2"
             src={plus2}
@@ -56,11 +62,11 @@ function Meal(props) {
           src={plus}
           alt="plus-sign"
           onClick={() => dispatch(increament(payload))}
-          className={order > 0 ? 'hide' : ''}
+          className={orderVal > 0 ? 'hide' : ''}
         />
       </div>
     </div>
-  );
+  )
 }
 Meal.propTypes = {
   meal: PropTypes.shape({
@@ -72,5 +78,5 @@ Meal.propTypes = {
     price: PropTypes.number,
   }).isRequired,
   CatagoryId: PropTypes.number.isRequired,
-};
-export default Meal;
+}
+export default Meal

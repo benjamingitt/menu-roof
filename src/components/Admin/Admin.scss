@@ -1,0 +1,25 @@
+.admin-page {
+  color: white;
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  input:checked + span {
+    text-decoration: line-through;
+  }
+
+  span:last-child {
+    color: red;
+    cursor: pointer;
+  }
+  img {
+    width: 600px;
+  }
+}

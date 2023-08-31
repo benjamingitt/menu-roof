@@ -25,7 +25,9 @@
       "warn",
       { "singleQuote": true, "endOfLine": "auto", "tabWidth": 4 }
     ],
-    "react/prop-types": "off"
+    "import/no-named-as-default": 0,
+    "react/prop-types": "off",
+    "eslint-disable-line": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }

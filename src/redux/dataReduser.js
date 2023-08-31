@@ -1,27 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import ProductService from 'API/ProductService'
+import produce from 'immer'
 
-import catagories from './data_base';
-
-const initialState = catagories;
+let initialState = []
 
 export const mealsReducer = createSlice({
   name: 'meals',
   initialState,
   reducers: {
     increament(state, action) {
-      const { CatagoryId, typeId } = action.payload;
-      const newState = JSON.parse(JSON.stringify(state));
-      newState[CatagoryId].list[typeId].order += 1;
-      return newState;
+      console.log('meals', state)
+      const { meal } = action.payload
+      const product = state.find((todo) => todo.id === meal.id)
+      if (product) {
+        product.order += 1
+      } else {
+        state.push({ ...meal, order: 1 })
+      }
+
+      return state
     },
     decreament(state, action) {
-      const { CatagoryId, typeId } = action.payload;
-      const newState = JSON.parse(JSON.stringify(state));
-      newState[CatagoryId].list[typeId].order -= 1;
-      return newState;
+      console.log('meals', state)
+      const { meal } = action.payload
+      const product = state.find((prod) => prod.id === meal.id)
+
+      product.order -= 1
+
+      return state
     },
   },
-});
+})
 
-export const { increament, decreament } = mealsReducer.actions;
-export default mealsReducer.reducer;
+export const { increament, decreament } = mealsReducer.actions
+export default mealsReducer.reducer
