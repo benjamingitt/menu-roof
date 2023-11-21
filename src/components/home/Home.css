@@ -34,11 +34,13 @@
   content: url('../../assets/images/geo-alt.svg');
 }
 
-.home-page .developer-information .phone-number {
+.home-page .developer-information .phone-number a {
   font-size: 18px;
   font-family: 'Rubik', sans-serif;
 }
-
+a[href^='tel:'] {
+  color: red;
+}
 .home-page .developer-information .phone-number::before {
   content: url('../../assets/images/telephone.svg');
 }

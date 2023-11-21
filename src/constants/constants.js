@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:3002/' // положили строку в константу
+export const API_URL = 'https://api.roofbar.team/'

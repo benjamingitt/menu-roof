@@ -4,8 +4,8 @@
   max-width: 500px;
   min-height: 100vh;
   margin-bottom: 70px;
-  background-image: url('../../assets/images/mainPicture.jpg');
-  background-size: 160%;
+  background-image: url('../../assets/images/main.png');
+  background-size: 100%;
   background-repeat: no-repeat;
   box-sizing: border-box;
   padding-top: 100px;
@@ -15,14 +15,19 @@
     flex-direction: column;
     padding: 1.5rem;
     color: #989898;
+    background: #112 url('../../assets/images/image (1).jpg') center no-repeat;
+    background-size: cover;
+    margin: 0;
 
     h1 {
       color: white;
       text-align: left;
-      margin-bottom: 1rem;
-      font-family: 'Rubik', sans-serif;
-      font-size: 2rem;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      font-family: 'Source Code Pro', sans-serif;
+      font-size: 6rem;
       font-weight: 400;
+      text-align: center;
     }
 
     .location {
@@ -37,7 +42,10 @@
     .phone-number {
       font-size: 18px;
       font-family: 'Rubik', sans-serif;
-
+      a[href^='tel:'] {
+        color: #989898;
+        text-decoration: none;
+      }
       &::before {
         content: url('../../assets/images/telephone.svg');
       }
@@ -65,7 +73,6 @@
   &:first-child {
     div {
       background-color: black;
-      border-radius: 45px;
     }
   }
 
@@ -80,7 +87,7 @@
     bottom: 0 !important;
     box-sizing: border-box !important;
     padding: 1rem !important;
-
+    z-index: 1;
     a {
       text-decoration: none;
     }
@@ -89,5 +96,131 @@
       color: white !important;
       font-size: 2rem;
     }
+  }
+  .span-del {
+    color: red !important;
+    cursor: pointer;
+    padding-left: 30px;
+  }
+  .input-elevated {
+    font-size: 16px;
+    line-height: 1.5;
+    border: none;
+    background: #ffffff;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><path fill='%23838D99' d='M13.22 14.63a8 8 0 1 1 1.41-1.41l4.29 4.29a1 1 0 1 1-1.41 1.41l-4.29-4.29zm-.66-2.07a6 6 0 1 0-8.49-8.49 6 6 0 0 0 8.49 8.49z'></path></svg>");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 20px 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    padding: 0.5em 1em 0.5em 2.5em;
+    margin-top: 35px;
+  }
+
+  .input-elevated::placeholder {
+    color: #838d99;
+  }
+
+  .input-elevated:focus {
+    outline: none;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  .loading {
+    position: relative;
+    margin: auto;
+    width: 350px;
+    height: 350px;
+
+    --colorA: #b78eff;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 25px;
+      bottom: 0;
+      right: 25px;
+      border-radius: 50%;
+      border-top: 10px solid #fff;
+      filter: drop-shadow(0 0 2px var(--colorA))
+        drop-shadow(0 0 5px var(--colorA)) drop-shadow(0 0 10px var(--colorA))
+        drop-shadow(0 0 20px var(--colorA));
+      animation: rotate 3s infinite linear;
+    }
+
+    &::after {
+      --colorA: #ffec41;
+      animation-delay: -1.5s;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .neon {
+    color: #fff;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #8650e3,
+      0 0 15px #8650e3,
+      0 0 30px #8650e3,
+      0 0 50px #8650e3,
+      0 0 90px #8650e3;
+    span {
+      animation: blink linear infinite 3s;
+    }
+    span:nth-of-type(2) {
+      animation: blink linear infinite 4s;
+    }
+    @keyframes blink {
+      78% {
+        color: inherit;
+        text-shadow: inherit;
+      }
+      79% {
+        color: #333;
+      }
+      80% {
+        text-shadow: none;
+      }
+      81% {
+        color: inherit;
+        text-shadow: inherit;
+      }
+      82% {
+        color: #333;
+        text-shadow: none;
+      }
+      83% {
+        color: inherit;
+        text-shadow: inherit;
+      }
+      92% {
+        color: #333;
+        text-shadow: none;
+      }
+      92.5% {
+        color: inherit;
+        text-shadow: inherit;
+      }
+    }
+  }
+  .neon-content {
+    color: #fff;
+    text-shadow:
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #8650e3,
+      0 0 15px #8650e3,
+      0 0 30px #8650e3,
+      0 0 50px #8650e3,
+      0 0 90px #8650e3;
   }
 }

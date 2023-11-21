@@ -6,12 +6,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import plus from '../../assets/images/plus.svg'
 import plus2 from '../../assets/images/plus2.svg'
 import minus from '../../assets/images/dash.svg'
-import { increament, decreament, getProduct } from '../../redux/dataReduser'
+import { increament, decreament } from '../../redux/dataReduser'
 import { API_URL } from 'constants/constants'
 
 function Meal(props) {
   const { CatagoryId, meal } = props
-  const { id, src, name, description, price, order } = meal
+  const { id, src, name, description, price, size } = meal
   const meals = useSelector((state) => state.meals)
   const orderFind = meals.filter((prod) => prod.id === id)
 
@@ -32,8 +32,9 @@ function Meal(props) {
       <div className="image-container">
         {src ? <img src={API_URL + src} alt={name} /> : null}
       </div>
-      <div className="name-container">
+      <div className="name-container ">
         <span>{name}</span>
+        <span className="size">{size}</span>
       </div>
       <div className="discription-container">
         <p>{description}</p>
@@ -76,6 +77,7 @@ Meal.propTypes = {
     discription: PropTypes.string,
     order: PropTypes.number,
     price: PropTypes.number,
+    size: PropTypes.string,
   }).isRequired,
   CatagoryId: PropTypes.number.isRequired,
 }

@@ -1,10 +1,8 @@
-import React, { useEffect, useLayoutEffect } from 'react'
+import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import './Meals.scss'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Meal from '../Meal/Meal'
-import { fetchProducts } from 'API/ProductService'
-import { getProduct } from 'redux/dataReduser'
 
 function Meals(products) {
   const id = useSelector((state) => state.types)

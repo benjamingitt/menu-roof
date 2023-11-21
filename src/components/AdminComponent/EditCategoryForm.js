@@ -1,21 +1,20 @@
-import { addNewCategory } from 'API/ProductService'
-import React from 'react'
+import { editNewCategory } from 'API/ProductService'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-const NewCategoryForm = () => {
-  const [name, setName] = useState('')
-  const [index, setIndex] = useState('')
-  const [file, setFile] = useState({
+const EditCategoryForm = (category) => {
+  const { id, name, index } = category
+
+  const [sname, setName] = useState(name)
+  const [sindex, setIndex] = useState(index)
+  const [sfile, setFile] = useState({
     image_file: null,
     image_preview: '',
   })
   const dispatch = useDispatch()
-
   const handleAction = () => {
-    if (name.trim().length) {
-      dispatch(addNewCategory({ name, file, index }))
-      setName('')
+    if (sname.trim().length) {
+      dispatch(editNewCategory({ sname, sfile, id, sindex }))
     }
   }
   function handleChange(e) {
@@ -30,19 +29,19 @@ const NewCategoryForm = () => {
     <label>
       <input
         placeholder="Name category"
-        value={name}
+        value={sname}
         onChange={(e) => setName(e.target.value)}
       />
       <input
         placeholder="index"
-        value={index}
+        value={sindex}
         onChange={(e) => setIndex(e.target.value)}
       />
       <input type="file" onChange={handleChange} />
-      <img src={file.image_preview} />
+      <img src={sfile.image_preview} />
       <button onClick={handleAction}>Add </button>
     </label>
   )
 }
 
-export default NewCategoryForm
+export default EditCategoryForm

@@ -1,12 +1,10 @@
 import React from 'react'
-import './Types.scss'
 import { useSelector } from 'react-redux'
 import Tabs from 'components/tabs/Tabs'
 import { Route, Routes } from 'react-router-dom'
+import Category from './Category'
 
-import Catagory from '../catagory/Catagory'
-
-function Types() {
+function TypesAdmin() {
   const product = useSelector((state) => state.product.data)
   const tabs = useSelector((state) => state.tabs)
   const items = [
@@ -22,7 +20,7 @@ function Types() {
             exact
             path={items[0].tab}
             element={product.map((el) =>
-              el.index === tabs ? <Catagory catagory={el} key={el.name} /> : '',
+              el.index === tabs ? <Category key={el.id} {...el} /> : '',
             )}
           />
         </Routes>
@@ -31,4 +29,4 @@ function Types() {
   )
 }
 
-export default Types
+export default TypesAdmin

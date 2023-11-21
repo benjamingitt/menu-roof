@@ -31,6 +31,12 @@
       color: white;
       font-size: 1.5rem;
       font-weight: 600;
+      font-family: 'Fira Sans', sans-serif;
+    }
+    .size {
+      margin-left: auto;
+      font-size: 1rem;
+      color: bisque;
     }
   }
 
@@ -44,6 +50,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Fira Sans', sans-serif;
 
     .counter {
       display: flex;

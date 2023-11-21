@@ -10,9 +10,10 @@
     color: white;
     text-align: left;
     margin-bottom: 1rem;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }
 .base-scrollbar {
@@ -24,8 +25,11 @@
     display: flex;
     align-items: center;
     overflow-x: auto;
-    padding: 4px 20px 6px 0;
+    padding: 25px 0px 25px 25px;
     grid-gap: 0 8p;
+    a {
+      text-decoration: none;
+    }
   }
   .tablinks {
     font-size: 1rem;
@@ -46,6 +50,8 @@
     -moz-user-select: none;
     user-select: none;
     align-items: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
   }
   .tablinks.active {
     background: white;
