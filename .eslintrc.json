@@ -12,22 +12,23 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["airbnb", "plugin:react/recommended", "eslint-config-prettier"],
-  "plugins": ["react", "eslint-plugin-prettier"],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react"],
   "rules": {
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "object-curly-newline": "off",
-    "jsx-quotes": [1, "prefer-single"],
-    "prettier/prettier": [
-      "warn",
-      { "singleQuote": true, "endOfLine": "auto", "tabWidth": 4 }
-    ],
+    "jsx-quotes": ["error", "prefer-double"],
     "import/no-named-as-default": 0,
     "react/prop-types": "off",
-    "eslint-disable-line": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
